@@ -1,0 +1,44 @@
+/* This is a container with a background image from the web */
+.container {
+    background-image: url('https://jooinn.com/images1280_/pink-banner.jpg');
+    width: 500px;
+    height: fit-content;    /* Adjust the height based on content */
+}
+
+/* Spacer with a fixed height */
+.spacer {
+    height: 70px;
+  }
+
+/* Container with styling */
+.container2 {
+    width: 90%;
+    margin: 4.5rem auto;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header with background image from the web */
+.header {
+    background-image: url('https://img.freepik.com/free-vector/abstract-pink-polygon-banner-background_1035-19018.jpg?t=st=1717356455~exp=1717360055~hmac=0e9d4d21ea93866207eff0b53ee8f8dd8f40b7c07a88b6d112222d1a6d48d805&w=1380');
+    width: 100%;
+    /* height: 100px; */ /* You can adjust the height as needed */
+    font-size: x-large;
+    text-align: center;
+    padding: 0.5px;
+}
+
+/* Footer with a fixed position and background image */
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-image: url('https://img.freepik.com/free-vector/abstract-pink-polygon-banner-background_1035-19018.jpg?t=st=1717356455~exp=1717360055~hmac=0e9d4d21ea93866207eff0b53ee8f8dd8f40b7c07a88b6d112222d1a6d48d805&w=1380');
+    width: 100%;
+    height: 40px;
+    font-size: medium;
+    text-align: center;
+    padding: 0.005cap;  
+}

@@ -1,0 +1,24 @@
+<!-- sticky_notes_app/templates/sticky_notes_app/view_post.html -->
+
+<!-- View selected note. -->
+
+{% extends "sticky_notes_app/base.html" %}
+<!-- This line extends the base template for this page. -->
+
+{% block title %}{{ post.title }}{% endblock %}
+<!-- Defines the title for the page, based on the note selected. -->
+
+{% block content %}
+<div class="view-note-page">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+    <p><strong>Created on:</strong> {{ post.created_at }}</p>
+    <a class="edit-note-button" href=
+    "{% url 'edit_note' post.id %}">Edit Note</a>
+    <!-- Add a link to delete the note -->
+    <a class="delete-note-button" href=
+    "{% url 'delete_note' post.id %}">Delete Note</a>
+    <!-- Add a link back to the list of notes -->
+    <a class="back-button" href="{% url 'notes_index' %}">Back to Notes List</a>
+</div>
+{% endblock %}

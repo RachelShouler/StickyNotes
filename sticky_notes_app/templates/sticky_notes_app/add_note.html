@@ -1,0 +1,35 @@
+<!-- sticky_notes_app/templates/sticky_notes_app/add_post.html -->
+
+<!-- To add new note to the application. -->
+
+{% extends "sticky_notes_app/base.html" %}
+<!-- This line extends the base template for this page. -->
+
+{% block title %}Add Sticky Note{% endblock %}
+<!-- This block defines the title for the page. -->
+
+{% block content %}
+<div class="add-note-page">
+    <h1>Add a New Sticky Note</h1>
+    <!-- Display a heading for the sticky note form. -->
+
+    <form method="post">
+        {% csrf_token %}
+        <!-- Include a CSRF token for security. -->
+
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title"><br>
+        <!-- Create an input field for the note title. -->
+
+        <label for="content">Content:</label>
+        <textarea id="content" name="content"></textarea><br>
+        <!-- Create a textarea for the note content. -->
+
+        <button type="submit">Add Post</button>
+        <!-- Display a button to submit the form. -->
+
+        <a class="back-button" href="{% url 'notes_index' %}">Cancel</a>
+        <!-- Provide a link to cancel and return to the notes index. -->
+    </form>
+</div>
+{% endblock %}

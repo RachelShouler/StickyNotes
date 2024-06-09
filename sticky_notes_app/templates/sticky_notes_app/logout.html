@@ -1,0 +1,16 @@
+<!-- sticky_notes_app/templates/sticky_notes_app/logout.html -->
+
+<!-- Confirmation of logout. -->
+
+{% extends 'sticky_notes_app/base.html' %}
+<!-- This line extends the base template for this page. -->
+
+{% block content %}
+<div class="logout-page">
+    <h2>Logout</h2>
+    <!-- Confirm logout message. -->
+    <p>You have been logged out.</p>
+    <!-- Button for option to log in again. -->
+    <a class="default-button" href="{% url 'login' %}">Login Again</a>
+</div>
+{% endblock %}

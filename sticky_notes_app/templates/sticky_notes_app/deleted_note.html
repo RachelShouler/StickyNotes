@@ -1,0 +1,21 @@
+<!-- sticky_notes_app/templates/sticky_notes_app/deleted_post.html -->
+
+<!-- Confimation of deleted note. -->
+
+{% extends "sticky_notes_app/base.html" %}
+<!-- This line extends the base template for this page. -->
+
+{% block title %}Sticky Notes{% endblock %}
+<!-- This block defines the title for the page. -->
+
+{% block content %}
+<div class="deleted_note">
+    <h1>Sticky Notes</h1>
+<p></p>    
+    <!-- Deletion confirmation message. -->
+    <b>Your Note "{{ post.title }}" has been deleted.</b>
+<p></p>
+    <!-- Link back to the list of notes -->
+    <a class="back-button" href="{% url 'notes_index' %}">Back to Notes List</a>
+</div>
+{% endblock %}>

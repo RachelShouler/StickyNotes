@@ -1,0 +1,20 @@
+<!-- sticky_notes_app/templates/sticky_notes_app/register.html -->
+
+<!-- Registration page for new users. -->
+
+{% extends 'sticky_notes_app/base.html' %}
+<!-- This line extends the base template for this page. -->
+
+{% block content %}
+<div class="container2">
+    <h2>Register</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <!-- Button to confirm registration. -->
+        <button type="login">Register</button>
+    </form>
+    <!-- Button to go to login page if already an existing user. -->
+    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+</div>
+{% endblock %}

@@ -1,0 +1,34 @@
+<!-- sticky_notes_app/templates/sticky_notes_app/index.html -->
+
+<!-- Landing page for StickyNotes application. -->
+
+{% extends 'sticky_notes_app/base.html' %}
+<!-- This line extends the base template for this page. -->
+
+{% block content %}
+<div class="index-page">
+    <!-- If the user is authenticated and logged in. -->
+    {% if user.is_authenticated %}
+    <h1>Hello {{ user.username }}!</h1>
+    <p></p>
+    <p><h3>Welcome back to Sticky Notes.</h3></p>
+    <p></p>
+        <!-- Button to go to Home Page. -->
+        <a class="notes-home-button" href="{% url 'notes_index' %}">Sticky Notes Home</a>
+        <!-- Button to logout. -->
+        <a class="logout-button" href="{% url 'logout' %}">Log Out</a>
+    <!-- If user is not authenticated and logged in. -->
+    {% else %}
+        <p><h1>Hi there!</h1></p>
+        <p></p>
+        <p>You are currently not logged in to the Sticky Notes App.</p>
+        <p></p>
+        <p>Please select an option below.</p>
+        <div class="spacer"></div>
+        <!-- Option to login. -->
+        <a class="login-button" href="{% url 'login' %}">Login</a>
+        <!-- Option to register if not already a user. -->
+        <a class="register-button" href="{% url 'register' %}">Register</a>
+    {% endif %}
+</div>
+{% endblock %}

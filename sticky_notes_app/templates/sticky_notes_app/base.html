@@ -1,0 +1,120 @@
+<!-- stcky_notes_app/templates/sticky_notes_app/base.html -->
+
+<!-- Base html. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sticky Notes{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <style>
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffdbfe;
+        }
+
+        /* Container styles */
+        .container {
+            width: 90%;
+            margin: 4.5rem auto;
+            padding: 1rem;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Button styles */
+        .add-note-button,
+        .edit-note-button,
+        .back-button,
+        .delete-note-button,
+        .notes-home-button,
+        .login-button,
+        .register-button,
+        .logout-button {
+            display: inline-block;
+            margin: 1rem 0;
+            padding: 0.5rem 1rem;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        /* Custom button colors */
+        .add-note-button {
+            background-color: fuchsia;
+        }
+        .login-button {
+            background-color: palevioletred;
+        }
+        .register-button {
+            background-color: slateblue;
+        }
+        .back-button {
+            background-color: #724acf;
+        }
+        .delete-note-button {
+            background-color: crimson;
+        }
+        .notes-home-button {
+            background-color: #ff00bf;
+        }
+        .logout-button {
+            background-color: rgb(139, 0, 81);
+        }
+
+        /* Page-specific styles */
+        .login-page,
+        .logout-page,
+        .protected-page {
+            margin-bottom: 2rem;
+            color: #333;
+            text-align: left;
+        }
+
+        /* Form input styles */
+        form label {
+            display: block;
+            margin-top: 1rem;
+        }
+        form input,
+        form textarea {
+            width: 50%;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Form button styles */
+        form button {
+            margin-top: 1rem 0;
+            padding: 0.6rem 1rem;
+            background-color: palevioletred;
+            color: #fff;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    {% include "sticky_notes_app/partials/header.html" %}
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    {% include "sticky_notes_app/partials/footer.html" %}
+</body>
+
+</html>

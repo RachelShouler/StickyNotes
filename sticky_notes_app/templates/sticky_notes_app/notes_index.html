@@ -1,0 +1,30 @@
+<!-- sticky_notes_app/templates/sticky_notes_app/index.html -->
+
+<!-- Home page for StickyNotes, will show notes for current user. -->
+
+{% extends "sticky_notes_app/base.html" %}
+<!-- This line extends the base template for this page. -->
+
+{% block title %}Sticky Notes{% endblock %}
+<!-- This block defines the title for the page. -->
+
+{% block content %}
+<div class="index-page">
+    <h1>Sticky Notes Board</h1>
+    <!-- Lists all notes for logged in user. -->
+    <ul>
+        {% for post in posts %}
+        <p></p>
+        <!-- Link for each note to view. -->
+        <li><a href="{% url 'view_note' post.id %}">{{ post.title }}</a> - 
+            {{ post.created_at }}</a></li>
+            <p></p>
+        {% endfor %}
+    </ul>
+        <div class="spacer"></div>
+        <!-- Button to add new note to the system. -->
+        <a class="add-note-button" href="{% url 'add_note' %}">Add New Note</a>
+        <!-- Button to logout of the system. -->
+        <a class="logout-button" href="{% url 'logout' %}">Log Out</a>
+</div>
+{% endblock %}>
